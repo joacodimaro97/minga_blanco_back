@@ -1,4 +1,3 @@
-
 import mongoose, {Schema, model, Types} from "mongoose";
 
 let schema = new Schema({
@@ -18,5 +17,5 @@ let schema = new Schema({
 })
 
 let collection = 'authors'
-let Author = model(schema, collection)
+let Author = model(collection, schema)
 export default Author
