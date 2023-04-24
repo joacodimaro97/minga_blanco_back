@@ -15,9 +15,6 @@ let read = async(req,res,next)=>{
             error: 'ha ocurrido un error'
         })
     }
-    
-    
-
 }
 
 export default read
