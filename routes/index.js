@@ -5,6 +5,7 @@ import categoriesRoutes from './categories.js'
 import chapterRouter from './chapters.js'
 import companiesRouter from './companies.js'
 import mangasRouter from './mangas.js'
+import resourceRouter from './resources.js'
 const router = express.Router();
 
 
@@ -21,6 +22,7 @@ router.use('/categories', categoriesRoutes)
 router.use('/chapters', chapterRouter)
 router.use('/companies', companiesRouter)
 router.use('/mangas', mangasRouter)
+router.use('/resources', resourceRouter)
 
 export default router;
 
