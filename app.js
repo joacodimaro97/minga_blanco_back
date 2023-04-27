@@ -1,4 +1,4 @@
-
+//normalizar js cambiando conts por import junto a su ruta ./
 
 import 'dotenv/config.js'
 import './config/database.js'
@@ -13,6 +13,7 @@ import cors from 'cors'
 import indexRouter from './routes/index.js';
 
 import {__dirname} from './utils.js'
+
 
 const app = express();
 
