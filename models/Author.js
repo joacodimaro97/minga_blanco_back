@@ -7,7 +7,7 @@ let schema = new Schema({
     country: {type:String, required: false}, //change to test
     date: {type:Date, required: false},
     photo: {type:String, required: true},
-    active: {type:Boolean, required: false}, //change to test
+    active: {type:Boolean, required: true},
     user_id: {
         type: Types.ObjectId,
         ref: 'users',

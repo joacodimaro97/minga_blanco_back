@@ -2,7 +2,6 @@ import Author from '../../models/Author.js'
 
 let create = async(req, res, next) => {
     try {
-        console.log(req.body)
         let one = await Author.create(req.body)
         return res.status(201).json({
             name: one.name,
@@ -10,6 +9,8 @@ let create = async(req, res, next) => {
             city: one.city,
             date: one.date,
             photo: one.photo,
+            active: 'true'
+            // id: req.user.id
         })
     } catch (error) {
         console.log(error)

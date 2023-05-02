@@ -10,6 +10,7 @@ export const authorCreate = joi.object({
         city: joi.string()
             .required(),
         date: joi.string()
-            .required()
+            .required(),
+        active: joi.boolean()
 })
 
