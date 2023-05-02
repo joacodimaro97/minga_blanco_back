@@ -13,8 +13,8 @@ let schema = new Schema({
     timestamps: true
 })
 
-let collection = 'auths'
+let collection = 'users'
 
-let Auth = model(collection, schema)
+let User = model(collection, schema)
 
-export default Auth
+export default User
