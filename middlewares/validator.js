@@ -10,6 +10,7 @@ const validator = (schema) => [
         }
         return next()
     }
+
 ]
 
-export default validator
+export default validator;
