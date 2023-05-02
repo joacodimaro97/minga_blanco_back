@@ -3,10 +3,15 @@ import Resource from "./../../Models/Resource.js";
 let read = async (req, res, next) => {
     try {
         let all = await Resource.find();
-        return res.status(200).json({ resources: all });
+        if(all.length > 0){
+            return res.status(200).json({ 
+                resources: all });
+        }
+        return next(404, 'The resource has not been found' )
+        
     } catch (error) {
         console.log(error);
-        return res.status(400).json({ error: "ocurrio un error" });
+       next(error)
     }
 };
 
