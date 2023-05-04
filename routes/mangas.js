@@ -12,3 +12,5 @@ router.get('/', passport.authenticate('jwt',{session:false}), read)
 // router.post('/mangas',create)
 
 export default router
+
+

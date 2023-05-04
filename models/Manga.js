@@ -1,5 +1,5 @@
-
 import {Schema, Types, model} from 'mongoose'
+
 
 let schema = new Schema(
   {
@@ -18,3 +18,5 @@ let schema = new Schema(
 
 let collection = 'mangas'
 let Manga = model (collection, schema)
+export default Manga
+
