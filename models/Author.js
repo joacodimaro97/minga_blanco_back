@@ -10,12 +10,8 @@ let schema = new Schema({
     active: {type:Boolean, required: true},
     user_id: {
         type: Types.ObjectId,
-
         ref: 'auths',
-        required: true
-
-        
-
+        required: false
 }},{
     timestamps: true
 })
