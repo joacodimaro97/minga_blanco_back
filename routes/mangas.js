@@ -1,4 +1,3 @@
-
 import { Router } from "express"
 import read from '../controllers/mangas/read.js'
 import create from '../controllers/mangas/create.js'
@@ -13,7 +12,4 @@ router.get('/', passport.authenticate('jwt',{session:false}), read)
 // router.post('/mangas',create)
 
 export default router
-
-
-
 
