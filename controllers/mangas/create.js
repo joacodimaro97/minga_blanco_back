@@ -1,22 +1,16 @@
 import Manga from '../../models/Manga.js'
 
-const createManga = {
-    create : async (req, res) => { //create es el modelo
-        try {
-
-          let manga = await Manga.create(req.body);
-          return res.status(201).json({
-            success: true,
-            message: "A new Manga could be created",
-
-          });
-        } catch (err) {
-          console.log(err);
-          return res.status(400).json({
-            success: false,
-            message: "Could not create a new Manga",
-          });
-        }
-      } 
+let create = async(req,res,next) => { //create es el modelo 
+    try {
+        let one = await Manga.create(req.body)
+        await one.save()
+        return res.status(201).json({
+            id: one._id,
+            timestamps: one.createdAt
+        })
+    } catch (error) {
+        next(error)
+    }
 }
-export default createManga
+
+export default create 
