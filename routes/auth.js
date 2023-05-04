@@ -9,7 +9,7 @@ import { Router } from 'express';
 import accountExistsSignUp from '../middlewares/accountExistSingUp.js';
 import accountExistsSignIn from '../middlewares/accountExistsSignIn.js'
 import accountHasBeenVerified from '../middlewares/accountHasBeenVerified.js'; 
-import passwordIsOk from '../middlewares/pwdIsOk.js';
+import pwdlsOk from '../middlewares/pwdIsOk.js'
 
 
 const router = Router();
@@ -25,7 +25,7 @@ router.get('/admins',(req,res,next)=>res.status(200).json({
 
 
 router.post('/signup', validator(userGetSignUp), accountExistsSignUp, signup)
-router.post('/signin',validator(userGetSignIn), accountExistsSignIn, accountHasBeenVerified, passwordIsOk ,signin)
+router.post('/signin',validator(userGetSignIn), accountExistsSignIn, accountHasBeenVerified, pwdlsOk ,signin)
 
 
 export default router;
