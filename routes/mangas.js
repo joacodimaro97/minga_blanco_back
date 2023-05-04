@@ -14,5 +14,3 @@ router.get('/', passport.authenticate('jwt',{session:false}), read)
 export default router
 
 
-
-
