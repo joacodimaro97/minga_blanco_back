@@ -9,7 +9,9 @@ import { Router } from 'express';
 import accountExistsSignUp from '../middlewares/accountExistSingUp.js';
 import accountExistsSignIn from '../middlewares/accountExistsSignIn.js'
 import accountHasBeenVerified from '../middlewares/accountHasBeenVerified.js'; 
-import passwordIsOk from '../middlewares/pwdIsOk.js';
+import pwdlsOk from '../middlewares/pwdIsOk.js'
+import signOut from '../controllers/auth/signOut.js';
+import passport from '../middlewares/passport.js';
 
 
 const router = Router();
@@ -25,8 +27,8 @@ router.get('/admins',(req,res,next)=>res.status(200).json({
 
 
 router.post('/signup', validator(userGetSignUp), accountExistsSignUp, signup)
-router.post('/signin',validator(userGetSignIn), accountExistsSignIn, accountHasBeenVerified, passwordIsOk ,signin)
-
+router.post('/signin',validator(userGetSignIn), accountExistsSignIn, accountHasBeenVerified, pwdlsOk ,signin)
+router.post('/signout', passport.authenticate('jwt', {session: false}) ,signOut)
 
 export default router;
 

@@ -2,6 +2,10 @@ import joi from "joi";
 
 
 export const userGetSignUp = joi.object({
+
+name: joi.string().messages({
+    'any.empty' : 'campo vacio'
+}),   
     
 email: 
     joi.string()
