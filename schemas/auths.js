@@ -46,7 +46,8 @@ is_verified:
     .optional(),
 verify_code: 
     joi.string()
-    .optional()
+    .optional(),
+name: joi.string()
 })
 
 export const userGetSignIn = joi.object({

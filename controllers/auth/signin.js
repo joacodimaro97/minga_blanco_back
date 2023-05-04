@@ -2,6 +2,7 @@ import Auth from '../../models/Auth.js'
 import  jwt  from 'jsonwebtoken'
 
 let signin = async(req, res, next) => {
+    console.log(req.user)
     try{
         await Auth.findOneAndUpdate(
             {email: req.body.email},
@@ -19,8 +20,7 @@ let signin = async(req, res, next) => {
         role: req.user.role,
 
 }
-console.log(user)
-console.log(req.user)
+
         return res.status(200).json({
             succes: true,
             message: 'auth sign in',

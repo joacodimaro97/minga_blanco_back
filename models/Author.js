@@ -11,10 +11,7 @@ let schema = new Schema({
     user_id: {
         type: Types.ObjectId,
         ref: 'auths',
-        required: true
-
-        
-
+        required: false
 }},{
     timestamps: true
 })
