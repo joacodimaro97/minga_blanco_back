@@ -1,4 +1,4 @@
-import joi from 'joi'
+import joi from 'joi-oid'
 
 export const authorCreate = joi.object({
         name: joi.string()
@@ -11,6 +11,8 @@ export const authorCreate = joi.object({
             .required(),
         date: joi.string()
             .required(),
-        active: joi.boolean()
+        active: joi.boolean(),
+        id: joi.string()
+            .required()
 })
 
