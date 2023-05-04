@@ -12,10 +12,15 @@ let signin = async(req, res, next) => {
         const token = jwt.sign(
             {id: req.user.id},
             process.env.SECRET,
-            {expiresIn: 60*60*24}
+            {expiresIn: 60*60*24}       
         )
-        const user = req.user
-        user.password = null
+        const user ={
+        email: req.user.email,
+        photo: req.user.photo,
+        role: req.user.role,
+
+}
+
         return res.status(200).json({
             succes: true,
             message: 'auth sign in',
