@@ -16,9 +16,7 @@ import passport from '../middlewares/passport.js';
 
 const router = Router();
 
-
 router.get("/", read)
-
 
 router.get('/admins',(req,res,next)=>res.status(200).json({
   succes: true,

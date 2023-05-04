@@ -9,9 +9,15 @@ passport.use(
         secretOrKey: process.env.SECRET
     },				
     async (jwt_payload,done) => {
+        console.log(jwt_payload)
         try {				
             let user = await Auth.findOne({id:jwt_payload.id})
-            if (user) {		
+            console.log(user)
+            if (user) {	
+                user = {
+                id: user.id,
+                email: user.email,
+                 }	
                 return done(null, user)
             } else {
                 return done(null, false)
