@@ -10,13 +10,14 @@ import accountExistsSignUp from '../middlewares/accountExistSingUp.js';
 import accountExistsSignIn from '../middlewares/accountExistsSignIn.js'
 import accountHasBeenVerified from '../middlewares/accountHasBeenVerified.js'; 
 import pwdlsOk from '../middlewares/pwdIsOk.js'
+import signOut from '../controllers/auth/signOut.js';
+import passport from '../middlewares/passport.js';
+
 
 
 const router = Router();
 
-
 router.get("/", read)
-
 
 router.get('/admins',(req,res,next)=>res.status(200).json({
   succes: true,

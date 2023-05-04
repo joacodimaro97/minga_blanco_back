@@ -10,9 +10,9 @@ let signin = async(req, res, next) => {
 
         )
         const token = jwt.sign(
-            {id: req.user.id},
+            {id: req.user._id},
             process.env.SECRET,
-            {expiresIn: 60*60*24}       
+            {expiresIn: 60*60*24}
         )
         const user ={
         email: req.user.email,
