@@ -1,22 +1,19 @@
-import Manga from '../../models/Manga.js'
 
-const createManga = {
-    create : async (req, res) => { //create es el modelo
-        try {
+import { Router } from "express"
+import read from '../controllers/mangas/read.js'
+import create from '../controllers/mangas/create.js'
+import passport from "passport"
 
-          let manga = await Manga.create(req.body);
-          return res.status(201).json({
-            success: true,
-            message: "A new Manga could be created",
+let router = Router()
 
-          });
-        } catch (err) {
-          console.log(err);
-          return res.status(400).json({
-            success: false,
-            message: "Could not create a new Manga",
-          });
-        }
-      } 
-}
-export default createManga
+
+router.post('/', create)
+router.get('/', passport.authenticate('jwt',{session:false}), read)
+// router.post('/comics',create)
+// router.post('/mangas',create)
+
+export default router
+
+
+
+
