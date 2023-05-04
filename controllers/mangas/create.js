@@ -1,6 +1,5 @@
 import Manga from '../../models/Manga.js'
 
-
 let create = async(req,res,next) => { //create es el modelo 
     try {
         let one = await Manga.create(req.body)
@@ -15,5 +14,6 @@ let create = async(req,res,next) => { //create es el modelo
 }
 
 export default create 
+
 
 
