@@ -1,17 +1,20 @@
-import User from '../models/User.js'
-import passport from 'passport'
-import passportJwt from 'passport-jwt'
+
+import passport from "passport"
+import passportJwt from "passport-jwt"
+
 
 
 passport.use(
     new passportJwt.Strategy({
-        jwtFromRequest: passportJwt.ExtractJwt.fromAuthHeaderAsBearerToken(), 
-        secretOrKey: process.env.SECRET  // esto sirve para desencriptar y elaborar una estrategia para extraer ese token
-    },
+
+        jwtFromRequest: passportJwt.ExtractJwt.fromAuthHeaderAsBearerToken(),
+        secretOrKey: process.env.SECRET
+    },				
     async (jwt_payload,done) => {
-        try {
+        try {				
             let user = await User.findOne({_id:jwt_payload.id})
-            if (user) {
+            if (user) {		
+
                 return done(null, user)
             } else {
                 return done(null, false)
