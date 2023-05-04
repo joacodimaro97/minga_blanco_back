@@ -1,5 +1,5 @@
 import express from 'express'
-import userRouter from './users.js'
+import authRouter from './auth.js'
 import authorRouter from './authors.js'
 import categoriesRoutes from './categories.js'
 import chapterRouter from './chapters.js'
@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 });
 
-router.use('/users', userRouter)
+router.use('/auths', authRouter)
 router.use('/authors', authorRouter)
 router.use('/categories', categoriesRoutes)
 router.use('/chapters', chapterRouter)
