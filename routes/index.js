@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 });
 
-router.use('/auths', authRouter)
+router.use('/auth', authRouter)
 router.use('/authors', authorRouter)
 router.use('/categories', categoriesRoutes)
 router.use('/chapters', chapterRouter)
