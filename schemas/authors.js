@@ -4,21 +4,21 @@ export const authorCreate = joi.object({
         name: joi.string()
             .required()
             .messages({
-                'any.required': 'NAME_REQUIRED',
-                'string.empty': 'NAME_REQUIRED',
+                'any.required': 'Name is required.',
+                'string.empty': 'Name is required.',
             }),
         last_name: joi.string()
             .required()
             .messages({
-                'any.required': 'LAST_NAME_REQUIRED',
-                'string.empty': 'LAST_NAME_REQUIRED',
+                'any.required': 'Last Name is required',
+                'string.empty': 'Last Name is required',
             }),
         photo: joi.string()
             .uri()
             .messages({
-                'any.required': 'PHOTO_REQUIRED',
-                'string.empty': 'PHOTO_REQUIRED',
-                'string.uri': 'INVALID_PHOTO_URL'
+                'any.required': 'Photo is required',
+                'string.empty': 'Photo is required',
+                'string.uri': 'Invalid photo URL'
             }),
         city: joi.string()
             .required(),

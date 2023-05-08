@@ -2,7 +2,7 @@ import Auth from '../../models/Auth.js'
 import  jwt  from 'jsonwebtoken'
 
 let signin = async(req, res, next) => {
-    console.log(req.user)
+    console.log(req.user.id)
     try{
         await Auth.findOneAndUpdate(
             {email: req.body.email},
@@ -14,11 +14,12 @@ let signin = async(req, res, next) => {
             process.env.SECRET,
             {expiresIn: 60*60*24}
         )
-        const user ={
-        email: req.user.email,
-        photo: req.user.photo,
-        role: req.user.role,
-}
+        const user = {
+            email: req.user.email,
+            photo: req.user.photo,
+            role: req.user.role,
+            id: req.user.id
+        }
         return res.status(200).json({
             succes: true,
             message: 'auth sign in',
