@@ -7,8 +7,8 @@ import passport from "passport"
 let router = Router()
 
 
-router.get('/', read)
-router.get('/comics', getMangas)
+// router.get('/', read)
+router.get('/', getMangas)
 router.post('/', create)
 // router.post('/mangas',create)
 
