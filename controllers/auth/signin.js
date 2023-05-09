@@ -8,8 +8,9 @@ let signin = async(req, res, next) => {
             {is_online: true}
 
         )
+        console.log(req.user.id)
         const token = jwt.sign(
-            {id: req.user._id},
+            {id: req.user.id},
             process.env.SECRET,
             {expiresIn: 60*60*24}
         )
