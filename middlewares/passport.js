@@ -14,7 +14,7 @@ passport.use(
         console.log(jwt_payload)
         try {				
 
-            let user = await Auth.findOne({id:jwt_payload._id})
+            let user = await Auth.findOne({_id:jwt_payload.id})
             if (user) {		
 
 

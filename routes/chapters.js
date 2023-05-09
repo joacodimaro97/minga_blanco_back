@@ -10,8 +10,11 @@ import passport from '../middlewares/passport.js';
 
 let router = Router()
 
-router.post('/',passport.authenticate("jwt",{session:false}), validator(createChapterSchema) , create)
+router.post('/',   create)
 router.get('/', read)
 
 
 export default router  
+
+// passport.authenticate("jwt",{session:false}),
+/* validator(createChapterSchema) */
