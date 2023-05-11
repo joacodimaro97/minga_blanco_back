@@ -8,7 +8,7 @@ let router = Router()
 
 
 // router.get('/', read)
-router.get('/', getMangas)
+router.get('/', passport.authenticate('jwt',{session:false}), getMangas)
 router.post('/', create)
 // router.post('/mangas',create)
 
