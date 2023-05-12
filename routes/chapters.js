@@ -13,8 +13,9 @@ let router = Router()
 
 
 router.post('/', validator(createChapterSchema) , create)
-router.get('/:id', getOne)
-router.get('/', read)
+router.get('/:id',getOne)
+router.get('/', get_chapters)
+
 
 
 
@@ -22,3 +23,5 @@ router.get('/', read)
 
 export default router  
 
+// passport.authenticate("jwt",{session:false}),
+/* validator(createChapterSchema) */
