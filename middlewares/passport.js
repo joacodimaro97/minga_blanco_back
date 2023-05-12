@@ -1,6 +1,8 @@
+
 import passport from "passport"
 import passportJwt from "passport-jwt"
 import Auth from '../models/Auth.js'
+
 
 
 passport.use(
@@ -17,7 +19,10 @@ passport.use(
             console.log(user)
             if (user) {		
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> eff0fe3ddb3cd1b6e72893bd58de44d0277afd5f
                 return done(null, user)
             } else {
                 return done(null, false)
