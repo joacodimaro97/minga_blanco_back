@@ -2,8 +2,6 @@
 import passport from "passport"
 import passportJwt from "passport-jwt"
 import Auth from '../models/Auth.js'
- 
-
 passport.use(
     new passportJwt.Strategy({
 
