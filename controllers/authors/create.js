@@ -1,10 +1,10 @@
-import Author from '../../models/Author.js'
-// import Auth from '../../models/Auth.js'
+import Author from "../../models/Author.js"
 
 let create = async(req, res, next) => {
+    console.log(req.user)
     try {
         // await Auth.findOneAndUpdate(
-        //     {name: req.user.name},
+        //     {_id: req.user._id},
         //     {role: 1}
         // )
         let one = await Author.create(req.body)
@@ -15,7 +15,6 @@ let create = async(req, res, next) => {
             date: one.date,
             photo: one.photo,
             active: 'true',
-            id: one.id
         })
     } catch (error) {
         console.log(error)
