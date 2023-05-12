@@ -29,4 +29,3 @@ router.post('/signin',validator(userGetSignIn), accountExistsSignIn, accountHasB
 router.post('/signout', passport.authenticate('jwt', {session: false}) ,signOut)
 
 export default router;
-

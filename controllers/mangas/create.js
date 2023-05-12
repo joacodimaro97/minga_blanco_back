@@ -14,5 +14,3 @@ let create = async(req,res,next) => { //create es el modelo
 }
 
 export default create 
-
-
