@@ -1,13 +1,11 @@
 import Chapter from '../../models/Chapter.js' 
 import { createChapterSchema } from '../../schemas/chapters.js';
 
+
 let create = async(req,res,next) => {
+  console.log(req.body)
     try {
-      const { value, error } = createChapterSchema.validate(req.body);
-      if (error) {
-        return res.status(400).json({ error: error.details[0].message });
-      }
-      const chapter = new Chapter(value);
+      const chapter = new Chapter(req.body);
       await chapter.save();
       res.status(201).json(chapter);
     } catch (err) {
