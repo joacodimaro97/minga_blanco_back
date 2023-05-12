@@ -2,7 +2,7 @@ import { Router } from "express"
 import read from '../controllers/mangas/read.js'
 import create from '../controllers/mangas/create.js'
 import getMangas from "../controllers/mangas/get_mangas.js"
-import passport from "passport"
+import passport from "../middlewares/passport.js"
 
 let router = Router()
 
