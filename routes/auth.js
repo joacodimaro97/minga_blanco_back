@@ -1,3 +1,4 @@
+import express from 'express'
 import signup from '../controllers/auth/signup.js';
 import signin from '../controllers/auth/signin.js'
 import read from '../controllers/auth/read.js';
@@ -28,4 +29,3 @@ router.post('/signin',validator(userGetSignIn), accountExistsSignIn, accountHasB
 router.post('/signout', passport.authenticate('jwt', {session: false}) ,signOut)
 
 export default router;
-
