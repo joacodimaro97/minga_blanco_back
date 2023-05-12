@@ -15,4 +15,3 @@ router.post('/author-form',validator(authorCreate), passport.authenticate('jwt',
 
 
 export default router
-

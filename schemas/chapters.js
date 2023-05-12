@@ -17,7 +17,10 @@ export const createChapterSchema = Joi.object({
   .uri(),
   pages: Joi.array()
   .items(Joi.string().uri())
-  .required(),
+  .required()
+  .messages({
+    'string.uri': '"pages" should be a valid url'
+  }),
   order: Joi.number()
   .integer()
   .min(1)
