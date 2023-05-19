@@ -10,6 +10,7 @@ import getOne from '../controllers/authors/get_one.js'
 
 let router = Router()
 
+router.get('/', read)
 router.get('/:id', passport.authenticate('jwt',{session:false}) ,getOne)
 router.post('/author-form',validator(authorCreate), create)
 

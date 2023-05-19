@@ -18,7 +18,7 @@ let getMangas = async(req,res,next) => {
         pagination.page = req.query.page ?? 1
         console.log(queries)
         let all = await Manga
-                    .find(queries).select("title cover_photo")
+                    .find(queries).select("title cover_photo author_id")
                     .sort(sort)
                     .skip(pagination.page > 0 ? (pagination.page-1)*pagination.limit : 0)
                     .limit(pagination.limit > 0 ? pagination.limit : 0)
