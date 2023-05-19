@@ -11,11 +11,9 @@ import getMe from '../controllers/mangas/get_me.js'
 import update from '../controllers/mangas/update.js'
 import destroy from "../controllers/mangas/destroy.js"
 
-
-
 let router = Router()
 
-router.get('/:id', /* passport.authenticate('jwt',{session:false}) */ getOne)
+router.get('/:id', passport.authenticate('jwt',{session:false}),  getOne)
 router.get('/authors/:author_id', passport.authenticate('jwt',{session:false}) ,mangasFromAuthor)
 router.get('/', /*passport.authenticate('jwt',{session:false}),*/ getMangas)
 
@@ -24,6 +22,5 @@ router.put('/:id', update)
 router.delete('/:id', destroy)
 
 router.post('/', passport.authenticate('jwt',{session:false}), validator(mangaCreate) , create)
-
 
 export default router
