@@ -6,7 +6,6 @@ const update = async(req,res,next) => {
                   {_id: req.params.id}, //Objeto con el que se va a buscar 
                   req.body, // Objeto con las modificaiones
                   {new:true})
-            console.log(response);
             if(response){
               return res.status(200).json({
                 success: true,

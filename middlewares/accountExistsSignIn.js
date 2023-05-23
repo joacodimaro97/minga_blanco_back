@@ -12,6 +12,7 @@ async function accountExistsSignIn(req, res, next){
             role: auth.role,
             is_verified: auth.is_verified
         }
+        console.log(req.user)
         return next()
     }
     return res.status(401).json({message: 'auth does not exist!'})

@@ -10,17 +10,18 @@ import getMangas from '../controllers/mangas/get_mangas.js'
 import getMe from '../controllers/mangas/get_me.js'
 import update from '../controllers/mangas/update.js'
 import destroy from "../controllers/mangas/destroy.js"
+import finds_id from '../middlewares/finds_id.js'
 
 let router = Router()
 
-router.get('/:id', passport.authenticate('jwt',{session:false}),  getOne)
-router.get('/authors/:author_id', passport.authenticate('jwt',{session:false}) ,mangasFromAuthor)
-router.get('/', /*passport.authenticate('jwt',{session:false}),*/ getMangas)
+router.get('/:id',  passport.authenticate('jwt', {session: false}), getOne)
+router.get('/authors/:author_id',  passport.authenticate('jwt', {session: false}) , mangasFromAuthor)
+router.get('/', passport.authenticate('jwt', {session: false}), getMangas)
 
-router.get('/me/:author_id', getMe)
-router.put('/:id', update)
-router.delete('/:id', destroy)
+router.get('/me',  passport.authenticate('jwt', {session: false}), finds_id, getMe)
+router.put('/:id', passport.authenticate('jwt', {session: false}), update)
+router.delete('/:id', passport.authenticate('jwt', {session: false}), destroy)
 
-router.post('/', passport.authenticate('jwt',{session:false}), validator(mangaCreate) , create)
+router.post('/', passport.authenticate('jwt', {session: false}), validator(mangaCreate) , create)
 
 export default router
