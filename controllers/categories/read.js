@@ -6,7 +6,8 @@ let read = async(req,res,next)=>{
         let all = await Category.find()
         return res.status(200)
         .json({
-            categories: all
+          success: 'ok',
+          response: all
         })
     }catch(error) {
         console.log(error)
