@@ -12,6 +12,9 @@ import accountHasBeenVerified from '../middlewares/accountHasBeenVerified.js';
 import pwdlsOk from '../middlewares/pwdIsOk.js'
 import signOut from '../controllers/auth/signOut.js';
 import passport from '../middlewares/passport.js';
+import is_admin from '../middlewares/is_admin.js'
+import updateAuthor from '../controllers/authors/update.js'
+import updateCompany from '../controllers/companies/update.js'
 
 
 const router = Router();
@@ -27,5 +30,7 @@ router.get('/admins',(req,res,next)=>res.status(200).json({
 router.post('/signup', validator(userGetSignUp), accountExistsSignUp, signup)
 router.post('/signin',validator(userGetSignIn), accountExistsSignIn, accountHasBeenVerified, pwdlsOk ,signin)
 router.post('/signout', passport.authenticate('jwt', {session: false}) ,signOut)
+router.put('/role/author/:id',passport.authenticate('jwt', {session: false}),is_admin,updateAuthor)
+router.put('/role/company/:id',passport.authenticate('jwt', {session: false}),is_admin,updateCompany)
 
 export default router;

@@ -2,10 +2,10 @@ import Auth from '../models/Auth.js'
 
 async function accountExistsSignIn(req, res, next){
     const auth = await Auth.findOne({email: req.body.email})
-    console.log(auth._id)
+    
     if(auth){
         req.user = {
-            id: auth._id,
+            id: auth.id,
             email: auth.email,
             photo: auth.photo,
             password: auth.password,

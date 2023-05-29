@@ -14,7 +14,7 @@ let router = Router()
 
 router.post('/', validator(createChapterSchema) , create)
 router.get('/:id',getOne)
-router.get('/', get_chapters)
+router.get('/',passport.authenticate('jwt',{session:false}), get_chapters)
 
 
 

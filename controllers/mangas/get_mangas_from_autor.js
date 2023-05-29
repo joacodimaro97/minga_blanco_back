@@ -9,16 +9,16 @@ const mangasFromAuthor = async (req, res, next) => {
         if (isNew) {
             mangas = await Manga.find({ author_id })
                 .sort({ createdAt: 1 })
-                .select("title cover_photo -_id")
+                .select("title cover_photo _id")
                 .limit(4);
         } else {
             mangas = await Manga.find({ author_id })
                 .sort({ createdAt: 1 })
-                .select("title cover_photo -_id");
+                .select("title cover_photo _id");
             if (req.query.new === 'true') {
                 mangas = await Manga.find({ author_id })
                     .sort({ createdAt: -1 })
-                    .select("title cover_photo -_id")
+                    .select("title cover_photo _id")
                     .limit(4);
             }
         }
@@ -33,3 +33,4 @@ const mangasFromAuthor = async (req, res, next) => {
 };
 
 export default mangasFromAuthor;
+//optimizar codigo con validaciones antes, en el return corregir el error de succes true
