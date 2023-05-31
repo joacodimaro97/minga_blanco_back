@@ -1,4 +1,5 @@
 import Auth from '../../models/Auth.js'
+import  jwt  from 'jsonwebtoken'
 
 let signin = async(req, res, next) => {
     try{
