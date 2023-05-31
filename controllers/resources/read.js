@@ -1,4 +1,4 @@
-import Resource from "./../../Models/Resource.js";
+import Resource from "./../../models/Resource.js";
 
 let read = async (req, res, next) => {
     try {
