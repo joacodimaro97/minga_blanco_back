@@ -1,4 +1,4 @@
-import Manga from '../models/Manga';
+import Manga from '../models/Manga.js';
 
 const existsTitleMiddleware = async (req, res, next) => {
   const { title } = req.body;

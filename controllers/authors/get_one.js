@@ -15,3 +15,4 @@ let getOne = async (req, res, next) => {
 };
 
 export default getOne;
+//corregir que author si el id es incorrecto no debe devolver succes true

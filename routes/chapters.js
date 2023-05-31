@@ -11,9 +11,15 @@ import getOne from '../controllers/chapters/get_one.js';
 let router = Router()
 
 router.post('/', validator(createChapterSchema) , create)
+router.get('/:id',getOne)
+router.get('/',passport.authenticate('jwt',{session:false}), get_chapters)
 
-router.get('/:id', getOne)
-router.get('/', get_chapters)
+
+
+
+
+
+
 
 export default router  
 

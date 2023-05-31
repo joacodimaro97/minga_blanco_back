@@ -1,4 +1,4 @@
-import Manga from '../models/Manga';
+import Manga from '../models/Manga.js';
 
 const is_property_of = async (req, res, next) => {
   const manga = await Manga.findOne({

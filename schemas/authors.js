@@ -25,7 +25,6 @@ export const authorCreate = joi.object({
         date: joi.string()
             .required(),
         active: joi.boolean(),
-        user_id: joi.objectId()
-            .required()
+       
 })
 
