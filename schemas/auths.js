@@ -46,8 +46,7 @@ is_verified:
     .optional(),
 verify_code: 
     joi.string()
-    .optional(),
-name: joi.string()
+    .optional()
 })
 
 export const userGetSignIn = joi.object({
@@ -56,19 +55,19 @@ export const userGetSignIn = joi.object({
     .required()
     .email({minDomainSegments: 2})
     .messages({
-        'any.required': 'Email is required',
-        'string.empty': 'Email is empty',
-        'string.email': 'Sorry, invalid email',
-        
+        'any.required': 'EMAIL_REQUIRED',
+        'string.empty': 'EMAIL_REQUIRED',
+        'string.email': 'INVALID_EMAIL',
+        'string.min': 'PASSWORD_TOO_SHORT',
     }),
 password: 
     joi.string()
     .required()
     .min(8)
     .messages({
-        'any.required': 'Password is required',
-        'string.empty': 'Password is empty',
-        'string.min': 'Invalid password, too short',
+        'any.required': 'PWD_REQUIRED',
+        'string.empty': 'PWD_REQUIRED',
+        'string.min': 'PWD_TOO_SHORT',
     }),
 
 

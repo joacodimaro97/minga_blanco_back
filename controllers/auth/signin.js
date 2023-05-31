@@ -1,8 +1,6 @@
 import Auth from '../../models/Auth.js'
-import  jwt  from 'jsonwebtoken'
 
 let signin = async(req, res, next) => {
-    console.log(req.user.id)
     try{
         await Auth.findOneAndUpdate(
             {email: req.body.email},
