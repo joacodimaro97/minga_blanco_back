@@ -28,7 +28,7 @@ password:
     }),
 photo: 
     joi.string()
-    .required()
+    .optional()
     .uri()
     .messages({
         'any.required': 'Photo is required',
