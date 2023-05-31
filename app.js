@@ -39,7 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
-app.use('/api', indexRouter);
+app.use('/', indexRouter);
 
 //funciona ante cualquier peticion, enviara un mensaje 404 si la ruta no existe
 app.use(notFound)
