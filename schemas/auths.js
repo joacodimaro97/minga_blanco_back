@@ -55,19 +55,19 @@ export const userGetSignIn = joi.object({
     .required()
     .email({minDomainSegments: 2})
     .messages({
-        'any.required': 'EMAIL_REQUIRED',
-        'string.empty': 'EMAIL_REQUIRED',
-        'string.email': 'INVALID_EMAIL',
-        'string.min': 'PASSWORD_TOO_SHORT',
+        'any.required': 'Email required',
+        'string.empty': 'Email required',
+        'string.email': 'Invalid email',
+        'string.min': 'Password too short',
     }),
 password: 
     joi.string()
     .required()
     .min(8)
     .messages({
-        'any.required': 'PWD_REQUIRED',
-        'string.empty': 'PWD_REQUIRED',
-        'string.min': 'PWD_TOO_SHORT',
+        'any.required': 'Password required',
+        'string.empty': 'Password required',
+        'string.min': 'Password too short',
     }),
 
 
