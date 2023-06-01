@@ -14,7 +14,7 @@ import finds_id from '../middlewares/finds_id.js'
 
 let router = Router()
 
-router.get('/:id',  passport.authenticate('jwt', {session: false}), getOne)
+router.get('/:id', getOne)
 router.get('/authors/:author_id',  passport.authenticate('jwt', {session: false}) , mangasFromAuthor)
 router.get('/', getMangas)
 
