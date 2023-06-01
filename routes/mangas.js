@@ -14,8 +14,8 @@ import destroy from "../controllers/mangas/destroy.js"
 
 let router = Router()
 
-router.get('/:id', passport.authenticate('jwt',{session:false}),  getOne)
-router.get('/authors/:author_id', passport.authenticate('jwt',{session:false}) ,mangasFromAuthor)
+router.get('/:id',  getOne)
+router.get('/authors/:author_id' ,mangasFromAuthor)
 router.post('/', passport.authenticate('jwt',{session:false}), validator(mangaCreate) , create)
 router.get('/', getMangas)
 
