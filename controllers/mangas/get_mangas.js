@@ -1,3 +1,5 @@
+import Manga from '../../models/Manga.js'
+
 let getMangas = async(req,res,next) => {
     try {
         let queries = {}
