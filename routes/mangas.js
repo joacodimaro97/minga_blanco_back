@@ -17,7 +17,7 @@ let router = Router()
 router.get('/:id', passport.authenticate('jwt',{session:false}),  getOne)
 router.get('/authors/:author_id', passport.authenticate('jwt',{session:false}) ,mangasFromAuthor)
 router.post('/', passport.authenticate('jwt',{session:false}), validator(mangaCreate) , create)
-router.get('/', passport.authenticate('jwt',{session:false}), getMangas)
+router.get('/', getMangas)
 
 
 
