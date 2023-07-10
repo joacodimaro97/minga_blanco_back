@@ -1,18 +1,16 @@
-import  {Schema, model, Types} from "mongoose";
+import { Schema, model, Types} from "mongoose"
 
-let schema = new Schema({
-    title: {type:String, requiered:true},
-    cover_photo: {type:String, requiered:true},
-    pages: [{type:String, requiered:true}],
-    order: {type:Number, requiered:true},
-    manga_id: {
-        type: Types.ObjectId, 
-        ref:'mangas', 
-        requiered:true}
+let schema = new Schema ({
+    manga_id: { type: Types.ObjectId, ref:'mangas' ,required: true},
+    title: { type: String, required: true},
+    cover_photo: { type: String, required: false},
+    pages: [{ type: String, required: true}],
+    order: { type: Number, required: true},
 },{
-    timestaps:true
-})
+    timestamps: true,
 
-let collection = 'Chapters'
-let Chapter = model(collection,schema);
+})
+let collection = 'chapters'
+
+let Chapter = model(collection, schema)
 export default Chapter
